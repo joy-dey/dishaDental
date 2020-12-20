@@ -1,0 +1,14 @@
+@mixin button-cta($padding-top-bottom, $padding-left-right, $font-size) {
+    padding: $padding-top-bottom $padding-left-right;
+    border: 2px solid $light;
+    color: $primary;
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+    font-size: $font-size;
+    font-weight: 500;
+}
+
+@mixin padding-common {
+    padding-top: 120px;
+    padding-bottom: 90px;
+}

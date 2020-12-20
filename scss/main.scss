@@ -1,0 +1,473 @@
+@import './utils/colors';
+@import './utils/mixins';
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.bg-primary {
+    background-color: $primary !important;
+}
+
+.text-secondary {
+    color: $secondary !important;
+}
+
+.bg-secondary {
+    background-color: $secondary !important;
+}
+
+.section-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 10vw, 3.8rem);
+    font-weight: 600;
+    margin-top: -1rem;
+}
+
+#header {
+    box-shadow: 0 5px 15px rgba($color: #000000, $alpha: 0.10);
+    .navbar-brand {
+        color: $secondary;
+    }
+    .brand-logo {
+        width: 50px;
+    }
+    .navbar-toggler {
+        background-color: $secondary;
+        padding: .5rem .75rem;
+        color: #fff;
+    }
+    .navbar-nav {
+        .nav-link {
+            color: #8f8bb8;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 0 1rem;
+            &:hover {
+                color: $secondary;
+                transition: color .3s linear;
+            }
+        }
+    }
+    .button-cta {
+        @include button-cta(1rem, 1.5rem, 13px);
+        &:hover {
+            background-color: $primary;
+            color: #fff;
+            border-color: $primary;
+            transition: all .3s ease-in-out;
+        }
+        &:last-child {
+            background-color: $secondary;
+            color: #fff;
+            border-color: $secondary;
+        }
+    }
+}
+
+#landing {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/landing-banner.jpg');
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-attachment: fixed;
+    color: #fff;
+    .h4 {
+        color: #cccee2;
+    }
+    .title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: clamp(3.5rem, 10vw, 5rem);
+    }
+    .button-cta-holder {
+        margin-top: 3rem;
+        .button-cta {
+            @include button-cta(1rem,
+            1.5rem,
+            14px);
+            background-color: $primary;
+            border-color: $primary;
+            color: #fff;
+            letter-spacing: 2px;
+            &:hover {
+                background-color: $secondary;
+                border-color: $secondary;
+                transition: all .3s ease-in-out;
+            }
+            &:last-child {
+                background-color: unset;
+                border: 3px solid;
+                border-color: rgba($color: #ffffff, $alpha: 0.2);
+                &:hover {
+                    background-color: $secondary;
+                    border-color: $secondary;
+                    transition: all .3s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+#clinic-info {
+    .col-lg-4 {
+        padding: 55px 30px;
+        background-color: $secondary;
+        color: #fff;
+        i {
+            font-size: clamp(3rem, 5vw, 2rem)
+        }
+        &:nth-child(2) {
+            background-color: $primary;
+        }
+        .info-block {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            a,
+            .heading {
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+                font-weight: 600;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+        &:hover {
+            .mdi::before {
+                transform: rotateY(360deg);
+                transition: all .5s linear;
+            }
+        }
+    }
+}
+
+#services {
+    @include padding-common;
+    .services-card {
+        border: 4px solid $light;
+        padding: 46px 38px;
+        border-radius: 0;
+        transition: all .3s linear 0ms;
+        position: relative;
+        overflow: hidden;
+        .icon-holder {
+            margin-bottom: 20px;
+            [class^="flaticon-"]::before {
+                font-size: 4rem;
+                margin-left: 0;
+                color: $secondary;
+            }
+        }
+        .card-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 17.5px;
+            margin-bottom: 15px;
+            color: $dark;
+        }
+        .service-desc {
+            font-size: 14px;
+            color: $text-color;
+            margin-bottom: 0;
+        }
+        .icon-holder-hover {
+            position: absolute;
+            top: -25px;
+            right: -25px;
+            [class^="flaticon-"]::before {
+                font-size: 120px;
+                margin-left: 0;
+                color: rgba($color: #ffffff, $alpha: 0.12);
+                transform: scale(0);
+                transition: all .3s linear 0ms;
+            }
+        }
+        &:hover {
+            color: #fff;
+            background-color: $primary;
+            border-color: $primary;
+            box-shadow: 0 16px 30px rgba($color: $primary, $alpha: 0.3);
+            .card-title {
+                color: #fff;
+            }
+            .icon-holder {
+                [class^="flaticon-"]::before {
+                    color: #fff;
+                }
+            }
+            .service-desc {
+                color: #fff;
+            }
+            .icon-holder-hover {
+                [class^="flaticon-"]::before {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+
+#appointment {
+    @include padding-common;
+    background-color: #fbf6ff;
+    .appointment-card {
+        border-radius: 0;
+        border: 0;
+        box-shadow: 0 8px 16px rgba($color: #d6d6d6, $alpha: 0.3);
+        .card-header {
+            background-color: $secondary;
+            color: #fff;
+            padding: 40px 40px;
+            border: 0;
+            border-radius: 0;
+            span {
+                color: rgba($color: #ffffff, $alpha: 0.8);
+                margin-bottom: 8px;
+                display: block;
+            }
+            .h3 {
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+            }
+        }
+        .card-body {
+            padding: 40px 20px;
+            padding-bottom: 20px;
+            .form-group {
+                background-color: #f4f7f7;
+                position: relative;
+                border: 2px solid rgba($color: #ffffff, $alpha: 0.01);
+                &:focus-within {
+                    border: 2px solid rgba($color: $secondary, $alpha: 0.3);
+                }
+                input {
+                    border: 0;
+                    background-color: transparent;
+                    padding: 1.2rem 1rem;
+                    width: 100%;
+                    box-sizing: border-box;
+                    background-clip: padding-box;
+                    appearance: none;
+                    &:focus {
+                        outline: 0;
+                    }
+                }
+                i {
+                    position: absolute;
+                    width: 50px;
+                    height: 100%;
+                    top: 0;
+                    right: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.2rem;
+                    color: #c9cce4;
+                    background-color: #f4f7f7;
+                }
+            }
+        }
+        .card-footer {
+            border-top: 0;
+            background-color: #fff;
+            padding-bottom: 40px;
+            .cta-button {
+                @include button-cta(1rem,
+                2rem,
+                14px);
+                background-color: $primary;
+                color: #fff;
+                border: 0;
+                letter-spacing: 2px;
+                transition: .2s ease-in-out;
+                &:focus {
+                    outline: 0;
+                    box-shadow: 0 0 0 2px rgba($color: $secondary, $alpha: .3);
+                }
+                &:hover {
+                    background-color: $secondary;
+                }
+                &:active {
+                    transform: translateY(3px);
+                }
+            }
+        }
+    }
+    .about-info {
+        .info-block {
+            span {
+                color: $primary;
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 2px;
+                display: block;
+            }
+            h2 {
+                font-size: clamp(24px, 25vw, 40px);
+                margin: 1rem 0;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+            }
+            p {
+                font-size: 14px;
+                color: $text-color;
+            }
+        }
+    }
+}
+
+#info-banner {
+    background-image: url('../img/emergency-banner.png');
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    background-attachment: fixed;
+    color: #fff;
+    i {
+        color: $primary;
+        font-size: 3rem;
+    }
+    a {
+        color: #fff;
+        font-size: 1.5rem;
+        background-color: $primary;
+        text-decoration: none;
+        padding: .7rem 2rem;
+    }
+    p {
+        font-size: 3rem;
+        margin-bottom: 1.4rem;
+    }
+}
+
+#dental-services {
+    @include padding-common;
+    .section-header {
+        padding-bottom: 3.9rem;
+        p {
+            color: #8f8bb8;
+        }
+    }
+    .flip-card {
+        transition: all .3s linear;
+        .flip-card-inner {
+            border: 4px solid #f7f7f7;
+            padding: 65px 30px 58px;
+            transition: transform .8s;
+            position: relative;
+            .icon-holder {
+                margin-bottom: 2rem;
+                img {
+                    transition: all .3s linear;
+                }
+            }
+            .service-name {
+                margin-bottom: 1.1rem;
+            }
+            p {
+                color: $text-color;
+            }
+        }
+        &:hover {
+            .icon-holder img {
+                transform: translateY(-10px);
+            }
+            .flip-card-inner {
+                border-color: $secondary;
+            }
+        }
+    }
+    .cta-block {
+        text-align: center;
+        padding-top: 2rem;
+        .cta-button {
+            @include button-cta(1rem,
+            2rem,
+            14px);
+            background-color: $primary;
+            color: #fff;
+            border: 0;
+            letter-spacing: 2px;
+            transition: .2s ease-in-out;
+            &:focus {
+                outline: 0;
+                box-shadow: 0 0 0 2px rgba($color: $secondary, $alpha: .3);
+            }
+            &:hover {
+                background-color: $secondary;
+            }
+            &:active {
+                transform: translateY(3px);
+            }
+        }
+    }
+}
+
+#topbanner {
+    background-image: url('../img/emergency-banner.png');
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: clamp(3.5rem, 10vw, 5rem);
+    }
+}
+
+.split-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 10vw, 5rem);
+}
+
+.wcu-img {
+    background-image: url('https://demo.casethemes.net/timan/wp-content/uploads/2018/12/blog7-600x424.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.wcu-img2 {
+    background-image: url('https://demo.casethemes.net/timan/wp-content/uploads/2018/12/blog4-600x424.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+// .wcu-img3 {
+//     background-image: url('https://demo.casethemes.net/timan/wp-content/uploads/2018/12/blog8-600x424.jpg');
+//     background-size: cover;
+//     background-repeat: no-repeat;
+// }
+// faq page
+footer {
+    padding: 2rem 1rem 1rem .5rem;
+    background-color: $secondary;
+    color: #ffffff;
+    address {
+        text-transform: capitalize;
+    }
+    p {
+        a {
+            font-size: 1.1rem;
+        }
+    }
+}
