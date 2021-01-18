@@ -46,9 +46,9 @@ if (faqAccordion) {
     faq.questions.forEach((question, i) => {
         faqAccordion.innerHTML += `
         <div class="card border my-3">
-            <div class="card-header d-flex justify-content-between align-items-center" id="headingOne" type="button" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}" style="background-color: #eaecef !important">
+            <div class="card-header d-flex justify-content-between align-items-center" id="headingOne" type="button" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}" style="background-color: #07b9c2 !important">
                 <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-decoration-none text-left text-dark font-weight-bold text-capitalize">
+                    <button class="btn btn-link btn-block text-decoration-none text-left text-white font-weight-bold text-capitalize">
                 ${question}
               </button>
                 </h2>
@@ -70,5 +70,3 @@ if (faqAccordion) {
 serviceDescription.forEach(description => {
     description.innerText = description.innerText.substring(0, 90) + '...';
 });
-
-AOS.init();

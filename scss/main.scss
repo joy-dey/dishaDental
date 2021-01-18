@@ -80,6 +80,9 @@ html {
     flex-direction: column;
     background-attachment: fixed;
     color: #fff;
+    img {
+        width: 150px;
+    }
     .h4 {
         color: #cccee2;
     }
@@ -103,16 +106,12 @@ html {
                 border-color: $secondary;
                 transition: all .3s ease-in-out;
             }
-            &:last-child {
-                background-color: unset;
-                border: 3px solid;
-                border-color: rgba($color: #ffffff, $alpha: 0.2);
-                &:hover {
-                    background-color: $secondary;
-                    border-color: $secondary;
-                    transition: all .3s ease-in-out;
-                }
-            }
+        }
+    }
+    .button-social {
+        max-width: 200px;
+        a {
+            font-size: 2rem;
         }
     }
 }
@@ -321,8 +320,9 @@ html {
                 font-weight: 600;
             }
             p {
-                font-size: 14px;
-                color: $text-color;
+                font-size: 16px;
+                font-weight: 450;
+                color: #343434;
             }
         }
     }
@@ -365,7 +365,6 @@ html {
     .flip-card {
         transition: all .3s linear;
         .flip-card-inner {
-            border: 4px solid #f7f7f7;
             padding: 65px 30px 58px;
             transition: transform .8s;
             position: relative;
@@ -386,9 +385,14 @@ html {
             .icon-holder img {
                 transform: translateY(-10px);
             }
-            .flip-card-inner {
-                border-color: $secondary;
+            p {
+                color: #fff;
             }
+            color: #fff;
+            background-color: $primary;
+            border-color: $primary;
+            box-shadow: 0 16px 30px rgba($color: $primary,
+            $alpha: 0.3);
         }
     }
     .cta-block {
